@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/ConversorUnidades-React/static/css/main.2eed40b3.css",
+    "main.js": "/ConversorUnidades-React/static/js/main.eaac7e0d.js",
+    "static/media/bg_app.svg": "/ConversorUnidades-React/static/media/bg_app.ae5d2c0d7ef29dfd2a66.svg",
+    "index.html": "/ConversorUnidades-React/index.html",
+    "main.2eed40b3.css.map": "/ConversorUnidades-React/static/css/main.2eed40b3.css.map",
+    "main.eaac7e0d.js.map": "/ConversorUnidades-React/static/js/main.eaac7e0d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2eed40b3.css",
+    "static/js/main.eaac7e0d.js"
+  ]
+}
