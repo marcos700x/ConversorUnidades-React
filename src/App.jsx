@@ -2,6 +2,7 @@ import './App.scss';
 import WidgetUnidad from './components/WidgetUnidad';
 import { Longitud } from './components/Longitud';
 import { Masa } from './components/Masa';
+import { Velocidad } from './components/Velocidad';
 import { useEffect, useState } from 'react';
 import { FiRepeat } from 'react-icons/fi';
 
@@ -14,8 +15,8 @@ function App() {
   const [isFrom, setIsFrom] = useState(true);
   const [isTo, setIsTo] = useState(false);
   const [selectedUnit, setSelectedUnit] = useState("Longitud");
-  const [actualUnit, setActualUnit] = useState(selectedUnit === "Longitud" ? Longitud : selectedUnit === "Masa" ? Masa : null)
-  const unidades = ["Longitud", "Masa"]
+  const [actualUnit, setActualUnit] = useState(selectedUnit === "Longitud" ? Longitud : selectedUnit === "Velocidad" ? Masa : null)
+  const unidades = ["Longitud", "Masa", "Velocidad"]
 
 
   useEffect(() => {
@@ -73,6 +74,8 @@ function App() {
       setActualUnit(Longitud)
     }else if(selectedUnit === "Masa"){
       setActualUnit(Masa)
+    }else if(selectedUnit === "Velocidad"){
+      setActualUnit(Velocidad)
     }
   }, [selectedUnit])
 
@@ -138,6 +141,32 @@ useEffect(() => {
           </div>
         </div>
         : null}
+
+        {selectedUnit === "Velocidad" ? 
+         <div className="contenedor">
+         <select name="" id="" onChange={unitSelector} value={selectedUnit}>
+           {unidades.map(elemento => <option key={elemento} value={elemento}>{elemento}</option>)}
+         </select>
+         <div className="contenedorWidgets">
+
+           <WidgetUnidad
+             data={Velocidad}
+             selected={fromSelected}
+             onChangeSelect={handleChangeFrom}
+             onChangeInput={handleChangeFromInput}
+             value={fromSelectedInput}
+           />
+           <FiRepeat size={'2rem'} />
+           <WidgetUnidad
+             data={Velocidad}
+             selected={toSelected}
+             onChangeSelect={handleChangeTo}
+             onChangeInput={handleChangeToInput}
+             value={toSelectedInput}
+           />
+         </div>
+       </div>
+      :null}
 
     </div>
   );
